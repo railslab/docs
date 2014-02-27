@@ -22,3 +22,12 @@ Este documento contém anotações relacionados ao curso de Rails, mostrando pas
 - [mouapp](http://mouapp.com/)
 
 #### Windows
+
+### Ruby/Rails docs
+- [Guia Oficial](guides.rubyonrails.org)
+- [Rails Girls BR](http://www.maujor.com/railsgirlsguide/)
+- [Rails API](http://api.rubyonrails.org/)
+- [Melhor API](http://apidock.com/)
+- [Guia Rápido](http://www.pragtob.info/rails-beginner-cheatsheet/)
+- [Rails 3 Cheat Sheet PDF](http://envylabs.com/uploads/Rails_3_Cheat_Sheets.pdf)
+- 
