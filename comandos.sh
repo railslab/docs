@@ -78,7 +78,8 @@ rake db:migrate
 git add .
 git commit -m "cria model Contato no banco de dados"
 
+# gerar controller específico para contatos
 rails g controller contatos index new enviado
 
-rails g controller Sessions new
-
+# adicionar campo lido para a tabela de contatos
+rails g migration AddLidoToContato lido:boolean

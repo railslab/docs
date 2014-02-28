@@ -1,18 +1,24 @@
+# para nao pedir senha ao utilizar sudo, adicionar a linha abaixo no arquivo mais abaixo:
+# neves ALL=(ALL) NOPASSWD:ALL
+sudo visudo -f /etc/sudoers.d/neves-passwordless
+
 sudo apt-get update
-sudo apt-get -y install git
-sudo apt-get -y install build-essential
-sudo apt-get -y install sqlite3
-sudo apt-get -y install libsqlite3-dev
+sudo apt-get -y install git build-essential sqlite3 libsqlite3-dev wget curl zsh libssl-dev
+
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+wget --no-check-certificate https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+chsh -s /bin/zsh neves
+
+# rbenv + ruby + rails
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-source ~/.bashrc
-rbenv install 2.1.0
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+rbenv install 2.1.0 -v
 rbenv global 2.1.0
+gem update --system
 
-ruby -v
 echo "gem: --no-ri --no-rdoc -V" > ~/.gemrc
 gem update --system
 gem install bundler
@@ -21,7 +27,9 @@ source 'https://rubygems.org'
 gem "rails"
 EOF
 bundle install --verbose
+rm Gemfile*
 
+# nodejs
 sudo apt-get install -y software-properties-common python-software-properties python g++ make
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
