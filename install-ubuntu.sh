@@ -43,3 +43,54 @@ sudo apt-get install -y software-properties-common python-software-properties py
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get -y install nodejs
+
+sudo apt-get install -y mysql-server
+sudo apt-get install -y php5 php5-mysql php5-gd php5-curl php5-json
+sudo apt-get install -y apache2
+
+
+# java JDK http://www.k19.com.br/artigos/como-instalar-o-jdk-7-no-ubuntu-13-10/
+sudo add-apt-repository ppa:webupd8team/java
+#Atualize a lista de pacotes disponíveis.
+sudo apt-get update
+#Finalmente, instale o pacote do JDK 7. OBS: vai aparecer algumas janela pra confirma versao, se aceita etc, apenas confirmar.
+sudo apt-get install -y oracle-java7-installer
+#Para verificar se a instalação funcionou, verifique a versão do JDK com o seguinte comando.
+java -version
+#Você também pode verificar a versão do compilador.
+javac -version
+
+# add Applications caso não exista.
+mkdir -p ~/Applications
+
+# install PHPStorm 7
+cd ~/Applications
+wget http://download.jetbrains.com/webide/PhpStorm-7.1.3.tar.gz
+tar -xvf PhpStorm-7.1.3.tar.gz
+~/Applications/PhpStorm-133.982/bin/phpstorm.sh
+rm ~/Applications/PhpStorm-7.1.3.tar.gz
+
+
+# install RubyMine 6
+cd ~/Applications
+wget http://download.jetbrains.com/ruby/RubyMine-6.0.3.tar.gz
+tar -xvf RubyMine-6.0.3.tar.gz
+~/Applications/RubyMine-6.0.3/bin/rubymine.sh
+rm ~/Applications/RubyMine-6.0.3.tar.gz
+
+
+# install Sublime Text 2
+cd ~/Applications
+wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.tar.bz2
+tar -xvf Sublime\ Text\ 2.0.2.tar.bz2
+rm Sublime\ Text\ 2.0.2.tar.bz2
+sudo ln -s ~/Applications/Sublime\ Text\ 2/sublime_text /usr/bin/subl
+
+
+# instal mysql-workbench
+sudo apt-get install -y mysql-workbench
+
+# gitg
+sudo apt-get install gitg
+echo alias gitx='gitg' >> .bashrc
+
