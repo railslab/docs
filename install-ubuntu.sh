@@ -3,7 +3,7 @@
 sudo visudo -f /etc/sudoers.d/neves-passwordless
 
 sudo apt-get update
-sudo apt-get -y install git build-essential sqlite3 libsqlite3-dev wget curl zsh libssl-dev
+sudo apt-get -y install git build-essential sqlite3 libsqlite3-dev wget curl zsh libssl-dev exfat-utils openssh-server
 
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 wget --no-check-certificate https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
@@ -15,8 +15,8 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-rbenv install 2.1.0 -v
-rbenv global 2.1.0
+rbenv install 2.1.1 -v
+rbenv global 2.1.1
 gem update --system
 
 echo "gem: --no-ri --no-rdoc -V" > ~/.gemrc
@@ -33,4 +33,4 @@ rm Gemfile*
 sudo apt-get install -y software-properties-common python-software-properties python g++ make
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
-sudo apt-get install nodejs
+sudo apt-get -y install nodejs

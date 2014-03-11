@@ -83,3 +83,6 @@ rails g controller contatos index new enviado
 
 # adicionar campo lido para a tabela de contatos
 rails g migration AddLidoToContato lido:boolean
+
+# gerar resource para usuarios
+rails g resource usuario nome email senha
