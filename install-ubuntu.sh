@@ -38,6 +38,11 @@ EOF
 bundle install --verbose
 rm Gemfile*
 
+# ack code search
+curl http://beyondgrep.com/ack-2.12-single-file > ack
+chmod +x ack
+sudo mv ack /usr/local/sbin/
+
 # nodejs
 sudo apt-get install -y software-properties-common python-software-properties python g++ make
 sudo add-apt-repository ppa:chris-lea/node.js
@@ -94,3 +99,12 @@ sudo apt-get install -y mysql-workbench
 sudo apt-get install gitg
 echo alias gitx='gitg' >> .bashrc
 
+# gerenciar alteracoes no /etc
+cd /tmp
+git clone git://git.kitenet.net/etckeeper.git
+sudo apt-get -y install bzr etckeeper
+cd etckeeper
+make install
+sudo etckeeper init
+cd /etc
+sudo git commit -m "first commit"
